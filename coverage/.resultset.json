@@ -191,8 +191,18 @@
       "/Users/hlevin/turing/mod_2/adopt_dont_shop/app/helpers/application_helper.rb": [
         1,
         null
+      ],
+      "/Users/hlevin/turing/mod_2/adopt_dont_shop/app/models/shelter.rb": [
+        1,
+        null,
+        null
+      ],
+      "/Users/hlevin/turing/mod_2/adopt_dont_shop/app/models/application_record.rb": [
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1574191184
+    "timestamp": 1574199750
   }
 }
