@@ -17,14 +17,29 @@ end
 
 #story 3
 RSpec.describe "shelters index page", type: :feature do
-  it "show all shelters" do
-    shelter_1 = Shelter.create(name: "Denver")
-    shelter_2 = Shelter.create(name: "Littleton")
+  it "show shelter (id) page and details" do
+    shelter_1 = Shelter.create(name: "Save Cats",
+                              address: "123 Pine",
+                              city: "Denver",
+                              state: "Colorado",
+                              zip: 80112)
+    shelter_2 = Shelter.create(name: "Save Dogs",
+                              address: "134 Pine",
+                              city: "Littleton",
+                              state: "Colorado",
+                              zip: 80111)
 
-    visit '/shelters/'
+    visit '/shelters/:id'
 
     expect(page).to have_content(shelter_1.name)
-    expect(page).to have_content(shelter_2.name)
+    expect(page).to have_content(shelter_1.address)
+    expect(page).to have_content(shelter_1.city)
+    expect(page).to have_content(shelter_1.zip)
+
+    expect(page).to have_content(shelter_2.address)
+    expect(page).to have_content(shelter_2.address)
+    expect(page).to have_content(shelter_2.city)
+    expect(page).to have_content(shelter_2.zip)
 
   end
 end
