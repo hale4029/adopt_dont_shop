@@ -1,0 +1,9 @@
+<h1><a href="/">Adopt Don't Shop</a></h1>
+
+<h2>Shelters</h2>
+
+<ul>
+<% @shelters.each do |shelter| %>
+    <li><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></li>
+<% end %>
+</ul>
