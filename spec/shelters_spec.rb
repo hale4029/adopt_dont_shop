@@ -2,7 +2,7 @@ require 'rails_helper'
 
 
 #story 2
-RSpec.describe "shelters index page", type: :feature do
+describe "shelters index page", type: :feature do
   it "show all shelters" do
     shelter_1 = Shelter.create(name: "Denver")
     shelter_2 = Shelter.create(name: "Littleton")
@@ -16,7 +16,7 @@ RSpec.describe "shelters index page", type: :feature do
 end
 
 #story 3
-RSpec.describe "shelters index page", type: :feature do
+describe "shelters index page", type: :feature do
   it "show shelter (id) page and details" do
     shelter_1 = Shelter.create(name: "Save Cats",
                               address: "123 Pine",
