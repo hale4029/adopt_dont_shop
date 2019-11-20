@@ -193,8 +193,22 @@
         1,
         null
       ],
+      "/Users/hlevin/turing/mod_2/adopt_dont_shop/spec/models/shelter_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null
+      ],
       "/Users/hlevin/turing/mod_2/adopt_dont_shop/app/models/shelter.rb": [
         null,
+        1,
         1,
         null
       ],
@@ -221,6 +235,6 @@
         null
       ]
     },
-    "timestamp": 1574210163
+    "timestamp": 1574285301
   }
 }
