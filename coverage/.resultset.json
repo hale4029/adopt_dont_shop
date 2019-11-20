@@ -186,6 +186,9 @@
         null,
         1,
         1,
+        1,
+        1,
+        null,
         null,
         null
       ],
@@ -227,6 +230,12 @@
         2,
         null,
         null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/hlevin/turing/mod_2/adopt_dont_shop/app/controllers/application_controller.rb": [
@@ -235,6 +244,6 @@
         null
       ]
     },
-    "timestamp": 1574285301
+    "timestamp": 1574293302
   }
 }
