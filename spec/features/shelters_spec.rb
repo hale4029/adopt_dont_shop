@@ -51,7 +51,7 @@ describe "shelters story tests", type: :feature do
 
       page.should have_no_content('New Sheleter Name')
       expect(page).to have_button("submit")
-      fill_in('shelter[name]', :with => 'Save Dog')
+      fill_in('shelter[name]', :with => 'New Shelter Name')
       fill_in('shelter[address]', :with => '123 Pine')
       fill_in('shelter[city]', :with => 'Denver')
       fill_in('shelter[state]', :with => 'Colorado')
@@ -61,6 +61,7 @@ describe "shelters story tests", type: :feature do
     it "creates new shelter" do
 
       visit "/shelters/new"
+      expect(page).to have_current_path("/shelters/new")
 
       fill_in('shelter[name]', :with => 'New Shelter Name')
       fill_in('shelter[address]', :with => '123 Pine')
@@ -69,8 +70,7 @@ describe "shelters story tests", type: :feature do
       fill_in('shelter[zip]', :with => 80122 )
       find_button('submit').click
 
-      page.should have_no_button("submit")
-      expect(page).to have_content("New Shelter Name")
+      expect(page).to have_current_path("/shelters")
       find_link('New Shelter Name').click
 
       expect(page).to have_content('New Shelter Name')
@@ -80,8 +80,39 @@ describe "shelters story tests", type: :feature do
       expect(page).to have_content(80122)
 
     end
+  end
+
+  describe "shelter id page allowing edit functionality" do
+    xit "has edit button and redirect to form page with filled form field" do
+
+      visit "/shelters/#{@shelter_1.id}"
+
+      find_link('Edit').visible?
+      find_link('Edit').click
+
+      expect(page).to have_current_path("/shelters/#{@shelter_1.id}/edit")
+      expect(page).to have_button("submit")
+      expect(page).to have_content('New Shelter Name')
+      expect(page).to have_content('123 Pine')
+      expect(page).to have_content('Denver')
+      expect(page).to have_content('Colorado')
+      expect(page).to have_content(80122)
+      fill_in('shelter[name]', :with => 'Updated Shelter Name')
+      fill_in('shelter[address]', :with => '123 Pine')
+      fill_in('shelter[city]', :with => 'Denver')
+      fill_in('shelter[state]', :with => 'Colorado')
+      fill_in('shelter[zip]', :with => 80123 )
+      find_button('submit').click
+
+      expect(page).to have_current_path("/shelters/#{@shelter_1.id}")
+      expect(page).to have_content('Updated Shelter Name')
+      expect(page).to have_content('123 Pine')
+      expect(page).to have_content('Denver')
+      expect(page).to have_content('Colorado')
+      expect(page).to have_content(80123)
 
 
+    end
   end
 
 end
