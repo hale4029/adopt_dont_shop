@@ -83,7 +83,7 @@ describe "shelters story tests", type: :feature do
   end
 
   describe "shelter id page allowing edit functionality" do
-    xit "has edit button and redirect to form page with filled form field" do
+    it "has edit button and redirect to form page with filled form field" do
 
       visit "/shelters/#{@shelter_1.id}"
 
@@ -92,11 +92,11 @@ describe "shelters story tests", type: :feature do
 
       expect(page).to have_current_path("/shelters/#{@shelter_1.id}/edit")
       expect(page).to have_button("submit")
-      expect(page).to have_content('New Shelter Name')
-      expect(page).to have_content('123 Pine')
-      expect(page).to have_content('Denver')
-      expect(page).to have_content('Colorado')
-      expect(page).to have_content(80122)
+      find_field('shelter[name]')
+      find_field('shelter[address]')
+      find_field('shelter[city]')
+      find_field('shelter[state]')
+      find_field('shelter[zip]')
       fill_in('shelter[name]', :with => 'Updated Shelter Name')
       fill_in('shelter[address]', :with => '123 Pine')
       fill_in('shelter[city]', :with => 'Denver')
