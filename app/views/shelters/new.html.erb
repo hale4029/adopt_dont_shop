@@ -1,0 +1,12 @@
+<h2><a href="/shelters">Shelters Index</a></h2>
+
+<form action="/shelters" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <h3>Create a New Shelter:</h3>
+  Name:     <input type='text' name='shelter[name]'/><br/>
+  Address:  <input type='text' name='shelter[address]'/><br/>
+  City:     <input type='text' name='shelter[city]'/><br/>
+  State:    <input type='text' name='shelter[state]'/><br/>
+  Zip Code: <input type='integer' name='shelter[zip]'/><br/>
+  <input name="submit" type='submit'/>
+</form>
