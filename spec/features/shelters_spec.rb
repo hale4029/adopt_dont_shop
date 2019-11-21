@@ -115,4 +115,22 @@ describe "shelters story tests", type: :feature do
     end
   end
 
+  describe "delete a shelter" do
+    it "check if delete button exists and it removes shelter from shelter index" do
+
+      visit "/shelters"
+
+      expect(page).to have_content(@shelter_2.name)
+
+      visit "/shelters/#{@shelter_2.id}"
+
+      find_link('Delete').visible?
+      find_link('Delete').click
+
+      expect(page).to have_current_path("/shelters")
+      page.should have_no_content(@shelter_2.name)
+
+    end
+  end
+
 end
