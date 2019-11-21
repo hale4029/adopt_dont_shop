@@ -124,8 +124,8 @@ describe "shelters story tests", type: :feature do
 
       visit "/shelters/#{@shelter_2.id}"
 
-      find_link('Delete').visible?
-      find_link('Delete').click
+      find_button('delete')
+      find_button('delete').click
 
       expect(page).to have_current_path("/shelters")
       page.should have_no_content(@shelter_2.name)
