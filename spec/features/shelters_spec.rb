@@ -69,9 +69,15 @@ describe "shelters story tests", type: :feature do
       fill_in('shelter[zip]', :with => 80122 )
       find_button('submit').click
 
+      page.should have_no_button("submit")
       expect(page).to have_content("New Shelter Name")
+      find_link('New Shelter Name').click
 
-
+      expect(page).to have_content('New Shelter Name')
+      expect(page).to have_content('123 Pine')
+      expect(page).to have_content('Denver')
+      expect(page).to have_content('Colorado')
+      expect(page).to have_content(80122)
 
     end
 
