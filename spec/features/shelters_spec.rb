@@ -50,12 +50,12 @@ describe "shelters story tests", type: :feature do
       visit "/shelters/new"
 
       page.should have_no_content('New Sheleter Name')
-      expect(page).to have_button("submit")
-      fill_in('shelter[name]', :with => 'New Shelter Name')
-      fill_in('shelter[address]', :with => '123 Pine')
-      fill_in('shelter[city]', :with => 'Denver')
-      fill_in('shelter[state]', :with => 'Colorado')
-      fill_in('shelter[zip]', :with => 80122 )
+      expect(page).to have_button("Create Shelter")
+      fill_in(:name, :with => 'New Shelter Name')
+      fill_in(:address, :with => '123 Pine')
+      fill_in(:city, :with => 'Denver')
+      fill_in(:state, :with => 'Colorado')
+      fill_in(:zip, :with => 80122 )
     end
 
     it "creates new shelter" do
@@ -63,12 +63,12 @@ describe "shelters story tests", type: :feature do
       visit "/shelters/new"
       expect(page).to have_current_path("/shelters/new")
 
-      fill_in('shelter[name]', :with => 'New Shelter Name')
-      fill_in('shelter[address]', :with => '123 Pine')
-      fill_in('shelter[city]', :with => 'Denver')
-      fill_in('shelter[state]', :with => 'Colorado')
-      fill_in('shelter[zip]', :with => 80122 )
-      find_button('submit').click
+      fill_in(:name, :with => 'New Shelter Name')
+      fill_in(:address, :with => '123 Pine')
+      fill_in(:city, :with => 'Denver')
+      fill_in(:state, :with => 'Colorado')
+      fill_in(:zip, :with => 80122 )
+      find_button('Create Shelter').click
 
       expect(page).to have_current_path("/shelters")
       find_link('New Shelter Name').click
@@ -91,18 +91,18 @@ describe "shelters story tests", type: :feature do
       find_link('Edit').click
 
       expect(page).to have_current_path("/shelters/#{@shelter_1.id}/edit")
-      expect(page).to have_button("submit")
-      find_field('shelter[name]')
-      find_field('shelter[address]')
-      find_field('shelter[city]')
-      find_field('shelter[state]')
-      find_field('shelter[zip]')
-      fill_in('shelter[name]', :with => 'Updated Shelter Name')
-      fill_in('shelter[address]', :with => '123 Pine')
-      fill_in('shelter[city]', :with => 'Denver')
-      fill_in('shelter[state]', :with => 'Colorado')
-      fill_in('shelter[zip]', :with => 80123 )
-      find_button('submit').click
+      expect(page).to have_button("Update Shelter")
+      find_field(:name)
+      find_field(:address)
+      find_field(:city)
+      find_field(:state)
+      find_field(:zip)
+      fill_in(:name, :with => 'Updated Shelter Name')
+      fill_in(:address, :with => '123 Pine')
+      fill_in(:city, :with => 'Denver')
+      fill_in(:state, :with => 'Colorado')
+      fill_in(:zip, :with => 80123 )
+      find_button('Update Shelter').click
 
       expect(page).to have_current_path("/shelters/#{@shelter_1.id}")
       expect(page).to have_content('Updated Shelter Name')
@@ -124,8 +124,8 @@ describe "shelters story tests", type: :feature do
 
       visit "/shelters/#{@shelter_2.id}"
 
-      find_button('delete')
-      find_button('delete').click
+      find_link('Delete')
+      find_link('Delete').click
 
       expect(page).to have_current_path("/shelters")
       page.should have_no_content(@shelter_2.name)
