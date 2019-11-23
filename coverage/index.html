@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-11-23T12:13:59-07:00">2019-11-23T12:13:59-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-11-23T12:36:35-07:00">2019-11-23T12:36:35-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.17
+         1.18
        </span>
     </span> hits/line)
   </h2>
@@ -263,11 +263,11 @@
       <tr>
         <td class="strong"><a href="#bb116329b342bdce5fb1e1308f618d61a9ad20c0" class="src_link" title="spec/models/pet_spec.rb">spec/models/pet_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>15</td>
+        <td>16</td>
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>1.5</td>
+        <td>1.6</td>
       </tr>
       
       <tr>
@@ -834,7 +834,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_presence_of :image, :name, :approximate_age, :sex</code>
+          <code class="ruby">  validates_presence_of :image, :name, :approximate_age, :sex, :adoption_status</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -3055,43 +3055,49 @@
           <code class="ruby">    it { should validate_presence_of :sex }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="9">
           
-          <code class="ruby">    xit { should validate_presence_of :shelter_id }</code>
+          
+          <code class="ruby">    #it { should validate_presence_of :shelter_id }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    it { should validate_presence_of :adoption_status }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &quot;relationships&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="13">
+        <li class="covered" data-hits="2" data-linenumber="14">
           <span class="hits">2</span>
           
           <code class="ruby">    it { should belong_to :shelter }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>
