@@ -43,38 +43,31 @@ describe "pets story tests", type: :feature do
       expect(page).to have_content(@pet_2.sex)
       expect(page).to have_content(@pet_2.shelter_id)
     end
+
   end
 
-  describe "pets page tied to a shelter" do
+  describe "pets page linked to a shelter" do
     it "should show all the pets at the shelter with the pet info" do
 
-      visit "/shelters/#{@shetler_1.id}/pets"
+      visit "/shelters/#{@shelter_1.id}"
       find_link('View Pets').click
       expect(page).to have_current_path("/shelters/#{@shelter_1.id}/pets")
 
       expect(page).to have_content(@pet_1.name)
       expect(page).to have_content(@pet_1.approximate_age)
       expect(page).to have_content(@pet_1.sex)
-      expect(page).to have_content(@pet_1.shelter_id)
       page.should have_no_content(@pet_2.name)
-      page.should have_no_content(@pet_2.approximate_age)
-      page.should have_no_content(@pet_2.sex)
-      page.should have_no_content(@pet_2.shelter_id)
 
-      visit "/shelters/#{@shetler_2.id}/pets"
+      visit "/shelters/#{@shelter_2.id}"
       find_link('View Pets').click
       expect(page).to have_current_path("/shelters/#{@shelter_2.id}/pets")
 
       expect(page).to have_content(@pet_2.name)
       expect(page).to have_content(@pet_2.approximate_age)
       expect(page).to have_content(@pet_2.sex)
-      expect(page).to have_content(@pet_2.shelter_id)
       page.should have_no_content(@pet_1.name)
-      page.should have_no_content(@pet_1.approximate_age)
-      page.should have_no_content(@pet_1.sex)
-      page.should have_no_content(@pet_1.shelter_id)
 
-      find_link('Back to Shelter').visable?
+      find_link('Back to Shelter').visible?
 
     end
   end
