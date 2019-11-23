@@ -45,7 +45,7 @@ describe "pets story tests", type: :feature do
     end
   end
 
-  descrive "pets page tied to a shelter" do
+  describe "pets page tied to a shelter" do
     it "should show all the pets at the shelter with the pet info" do
 
       visit "/shelters/#{@shetler_1.id}/pets"
