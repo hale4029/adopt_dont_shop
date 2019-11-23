@@ -348,6 +348,7 @@
         2,
         null,
         2,
+        2,
         null,
         null,
         1,
@@ -360,6 +361,11 @@
         1,
         null,
         1,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/hlevin/turing/mod_2/adopt_dont_shop/app/models/application_record.rb": [
@@ -463,6 +469,6 @@
         null
       ]
     },
-    "timestamp": 1574537795
+    "timestamp": 1574538407
   }
 }

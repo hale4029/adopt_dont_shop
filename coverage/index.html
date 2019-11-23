@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-11-23T12:36:35-07:00">2019-11-23T12:36:35-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-11-23T12:46:47-07:00">2019-11-23T12:46:47-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>23</b> files in total.
-    <b>186</b> relevant lines. 
-    <span class="green"><b>186</b> lines covered</span> and
+    <b>187</b> relevant lines. 
+    <span class="green"><b>187</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -103,7 +103,7 @@
       <tr>
         <td class="strong"><a href="#ef61227476a2c1d4226e8dbc79f7badd3da9c1dd" class="src_link" title="app/models/pet.rb">app/models/pet.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>5</td>
+        <td>10</td>
         <td>3</td>
         <td>3</td>
         <td>0</td>
@@ -263,9 +263,9 @@
       <tr>
         <td class="strong"><a href="#bb116329b342bdce5fb1e1308f618d61a9ad20c0" class="src_link" title="spec/models/pet_spec.rb">spec/models/pet_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>16</td>
-        <td>10</td>
-        <td>10</td>
+        <td>17</td>
+        <td>11</td>
+        <td>11</td>
         <td>0</td>
         <td>1.6</td>
       </tr>
@@ -834,10 +834,40 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_presence_of :image, :name, :approximate_age, :sex, :adoption_status</code>
+          <code class="ruby">  validates_presence_of :image,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">                        :name,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">                        :approximate_age,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">                        :sex,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">                        :adoption_status,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">                        :description</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">end</code>
@@ -2998,8 +3028,8 @@
     <h3>spec/models/pet_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3067,37 +3097,43 @@
           <code class="ruby">    it { should validate_presence_of :adoption_status }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    it { should validate_presence_of :description }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &quot;relationships&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="14">
+        <li class="covered" data-hits="2" data-linenumber="15">
           <span class="hits">2</span>
           
           <code class="ruby">    it { should belong_to :shelter }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">end</code>
