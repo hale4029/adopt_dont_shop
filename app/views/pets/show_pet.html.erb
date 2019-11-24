@@ -1,0 +1,15 @@
+
+
+    <ul>
+        <li><%= @pet.name %></li>
+        <li><img src= <%= @pet.image %>></li>
+        <li>Sex: <%= @pet.sex %></li>
+        <li>Age: <%= @pet.approximate_age %></li>
+        <li>Shelter ID: <%= @pet.shelter_id %></li>
+        <li>Description: <%= @pet.description %></li>
+        <li>Adoption Status: <%= @pet.adoption_status %></li>
+    </ul>
+
+<%= link_to 'Edit', "/pets/#{@pet.id}/edit" %><br>
+<%= link_to 'Delete', "/pets/#{@pet.id}", method: :delete %><br>
+<%= link_to 'Back to Pets', "/pets" %>
