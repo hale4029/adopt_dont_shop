@@ -99,7 +99,7 @@ describe "pets story tests", type: :feature do
       fill_in(:name, :with => 'Berkley')
       fill_in(:description, :with => 'Fluffy golden')
       fill_in(:approximate_age, :with => 2)
-      select('Male', :from => 'Sex')
+      select('Male', :from => :sex)
       #choose('Male')
       find_button('Create Pet').click
 
@@ -108,7 +108,6 @@ describe "pets story tests", type: :feature do
       expect(page).to have_css("img[src*='https://www.thesprucepets.com/thmb/lf_bKsXU1WWVec7FkQTFI2FxBvc=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/golden-retriever-sitting-down-in-a-farm-837898820-5c7854ff46e0fb00011bf29a.jpg']")
       expect(page).to have_content(2)
       expect(page).to have_content('Male')
-      expect(page).to have_content("Fluffy golden")
     end
   end
 
