@@ -10,4 +10,5 @@
         <li>Adoption Status: <%= @pet.adoption_status %></li>
     </ul>
 
+<%= link_to 'Edit', "/pets/#{@pet.id}/edit" %><br>
 <%= link_to 'Back to Pets', "/pets" %>

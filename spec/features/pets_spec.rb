@@ -114,7 +114,7 @@ describe "pets story tests", type: :feature do
   describe "update pet information" do
     it "updates pet info via pet's show page" do
       visit "/pets/#{@pet_1.id}"
-      find_link("Update Pet Info").click
+      find_link("Edit").click
       expect(page).to have_current_path("/pets/#{@pet_1.id}/edit")
 
       fill_in(:image, :with => 'https://www.thesprucepets.com/thmb/lf_bKsXU1WWVec7FkQTFI2FxBvc=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/golden-retriever-sitting-down-in-a-farm-837898820-5c7854ff46e0fb00011bf29a.jpg')
