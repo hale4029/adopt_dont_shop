@@ -11,4 +11,5 @@
     </ul>
 
 <%= link_to 'Edit', "/pets/#{@pet.id}/edit" %><br>
+<%= link_to 'Delete', "/pets/#{@pet.id}", method: :delete %><br>
 <%= link_to 'Back to Pets', "/pets" %>

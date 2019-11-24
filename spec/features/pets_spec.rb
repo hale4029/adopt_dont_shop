@@ -131,14 +131,13 @@ describe "pets story tests", type: :feature do
     end
   end
 
-  describe "update pet information" do
-    it "updates pet info via pet's show page" do
+  describe "delete pet information" do
+    it "deletes pet info from pet show page" do
       visit "/pets/#{@pet_1.id}"
       find_link("Delete").click
 
       page.should have_no_content('Berkley')
-      page.should have_no_content(2)
-      page.should have_no_content('Male')
+
     end
   end
 
