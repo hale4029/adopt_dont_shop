@@ -90,7 +90,7 @@ describe "pets story tests", type: :feature do
   end
 
   describe "create new pet nested under shelter" do
-    it "creates new pet" do
+    it "creates new pet and data is displayed on shelet's pet page" do
       visit "/shelters/#{@shelter_1.id}/pets"
       find_link("Add New Pet").click
       expect(page).to have_current_path("/shelters/#{@shelter_1.id}/pets/new")
@@ -100,7 +100,6 @@ describe "pets story tests", type: :feature do
       fill_in(:description, :with => 'Fluffy golden')
       fill_in(:approximate_age, :with => 2)
       select('Male', :from => :sex)
-      #choose('Male')
       find_button('Create Pet').click
 
       expect(page).to have_current_path("/shelters/#{@shelter_1.id}/pets")
@@ -108,6 +107,29 @@ describe "pets story tests", type: :feature do
       expect(page).to have_css("img[src*='https://www.thesprucepets.com/thmb/lf_bKsXU1WWVec7FkQTFI2FxBvc=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/golden-retriever-sitting-down-in-a-farm-837898820-5c7854ff46e0fb00011bf29a.jpg']")
       expect(page).to have_content(2)
       expect(page).to have_content('Male')
+    end
+  end
+
+
+  describe "update pet information" do
+    it "updates pet info via pet's show page" do
+      visit "/pets/#{@pet_1.id}"
+      find_link("Update Pet Info").click
+      expect(page).to have_current_path("/pets/#{@pet_1.id}/edit")
+
+      fill_in(:image, :with => 'https://www.thesprucepets.com/thmb/lf_bKsXU1WWVec7FkQTFI2FxBvc=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/golden-retriever-sitting-down-in-a-farm-837898820-5c7854ff46e0fb00011bf29a.jpg')
+      fill_in(:name, :with => 'Berkley')
+      fill_in(:description, :with => 'Fluffy golden big time')
+      fill_in(:approximate_age, :with => 3)
+      select('Female', :from => :sex)
+      find_button('Update Pet Info').click
+      expect(page).to have_current_path("/pets/#{@pet_1.id}")
+
+      expect(page).to have_content('Fluffy golden big time')
+      expect(page).to have_content(3)
+      expect(page).to have_content('Female')
+
+
     end
   end
 
