@@ -9,5 +9,8 @@
         <li>Age: <%= pet.approximate_age %></li>
         <li>Shelter ID: <%= pet.shelter_id %></li>
       </ul>
+      <%= link_to "Pet's Shelter Page", "/shelters/#{pet.shelter_id}/" %><br>
+      <%= link_to 'Edit', "/pets/#{pet.id}/edit" %>
+      <%= link_to 'Delete', "/pets/#{pet.id}", method: :delete %><br>
 <% end %>
 </ul>

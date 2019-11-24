@@ -8,6 +8,8 @@
         <li>Sex: <%= pet.sex %></li>
         <li>Age: <%= pet.approximate_age %></li>
       </ul>
+      <%= link_to 'Edit', "/pets/#{pet.id}/edit" %>
+      <%= link_to 'Delete', "/pets/#{pet.id}", method: :delete %><br>
 <% end %>
 </ul>
 

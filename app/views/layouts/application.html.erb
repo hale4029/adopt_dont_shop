@@ -7,9 +7,16 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
-    <h1><a href="/">Adopt Don't Shop</a></h1>
+    <header>
+      <h1 class="link"><%= link_to "Adopt Don't Shop", "/" %></h1>
+      <nav>
+        <ul>
+          <li class="link"><%= link_to "Shleters", "/shelters" %></li>
+          <li class="link"><%= link_to "Pets", "/pets" %></li>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
