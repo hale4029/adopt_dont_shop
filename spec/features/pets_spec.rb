@@ -89,6 +89,28 @@ describe "pets story tests", type: :feature do
     end
   end
 
+  describe "create new pet nested under shelter" do
+    it "creates new pet" do
+      visit "/shelters/#{@shelter_1.id}/pets"
+      find_link("Add New Pet").click
+      expect(page).to have_current_path("/shelters/#{@shelter_1.id}/pets/new")
+
+      fill_in(:image, :with => 'https://www.thesprucepets.com/thmb/lf_bKsXU1WWVec7FkQTFI2FxBvc=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/golden-retriever-sitting-down-in-a-farm-837898820-5c7854ff46e0fb00011bf29a.jpg')
+      fill_in(:name, :with => 'Berkley')
+      fill_in(:description, :with => 'Fluffy golden')
+      fill_in(:approximate_age, :with => 2)
+      select('Male', :from => 'Sex')
+      #choose('Male')
+      find_button('Create Pet').click
+
+      expect(page).to have_current_path("/shelters/#{@shelter_1.id}/pets")
+      expect(page).to have_content('Berkley')
+      expect(page).to have_css("img[src*='https://www.thesprucepets.com/thmb/lf_bKsXU1WWVec7FkQTFI2FxBvc=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/golden-retriever-sitting-down-in-a-farm-837898820-5c7854ff46e0fb00011bf29a.jpg']")
+      expect(page).to have_content(2)
+      expect(page).to have_content('Male')
+      expect(page).to have_content("Fluffy golden")
+    end
+  end
 
 
 end
