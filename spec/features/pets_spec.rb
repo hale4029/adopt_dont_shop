@@ -72,5 +72,23 @@ describe "pets story tests", type: :feature do
     end
   end
 
+  describe "pet's detail via pets index page" do
+    it "should show additional detail regarding description and adoptability" do
+
+      visit "/pets/#{@pet_1.id}"
+
+      expect(page).to have_content(@pet_1.name)
+      expect(page).to have_css("img[src*='https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&width=1080']")
+      expect(page).to have_content(@pet_1.approximate_age)
+      expect(page).to have_content(@pet_1.sex)
+      expect(page).to have_content(@pet_1.shelter_id)
+      expect(page).to have_content(@pet_1.description)
+      expect(page).to have_content(@pet_1.adoption_status)
+      page.should have_no_content(@pet_2.name)
+
+    end
+  end
+
+
 
 end
