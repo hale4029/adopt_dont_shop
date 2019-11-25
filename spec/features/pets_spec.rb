@@ -141,5 +141,21 @@ describe "pets story tests", type: :feature do
     end
   end
 
+  describe "test story 15" do
+    it "test edit link for every shelter on shelter index page" do
+      visit "/pets"
+      page.assert_selector(:link, 'Edit', count: 2)
+    end
+  end
+
+  describe "test story 16" do
+    it "test delete link for every shelter on shelter index page" do
+      visit "/pets"
+      page.assert_selector(:link, 'Delete', count: 2)
+    end
+  end
+
+
+
 
 end
