@@ -3,17 +3,17 @@
   <head>
     <title>AdoptDontShop</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all' %>.
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
     <header>
-      <h1 class="link"><%= link_to "Adopt Don't Shop", "/" %></h1>
+      <h1><%= link_to "Adopt Don't Shop", "/", :class => "link" %></h1>
       <nav>
         <ul>
-          <li class="link"><%= link_to "Shleters", "/shelters" %></li>
-          <li class="link"><%= link_to "Pets", "/pets" %></li>
+          <li><%= link_to "Shleters", "/shelters", :class => "link" %></li>
+          <li><%= link_to "Pets", "/pets", :class => "link" %></li>
         </ul>
       </nav>
     </header>
