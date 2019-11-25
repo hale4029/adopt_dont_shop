@@ -133,4 +133,12 @@ describe "shelters story tests", type: :feature do
     end
   end
 
+  describe "test story 13" do
+    it "test edit link for every shelter on shelter index page" do
+      visit "/shelters"
+      find_link("Edit Shelter: #{@shelter_1.id}")[:href].should == "/shelters/#{@shelter_1.id}/edit"
+      find_link("Edit Shelter: #{@shelter_2.id}")[:href].should == "/shelters/#{@shelter_2.id}/edit"
+    end
+  end
+
 end
