@@ -1,11 +1,13 @@
 class PetsController < ApplicationController
   def index
-    @pets = Pet.all
+    pets = Pet.all
+    @pets = pets.sort_by { |pet| pet.adoption_status }
   end
 
   def show
     @shelter = Shelter.find(params[:shelter_id])
-    @pets = @shelter.pets
+    pets = @shelter.pets
+    @pets = pets.sort_by { |pet| pet.adoption_status }
   end
 
   def show_pet

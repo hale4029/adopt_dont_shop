@@ -3,6 +3,8 @@
   <%= link_to 'Add New Pet', "/shelters/#{@shelter.id}/pets/new" %><br>
   <%= link_to 'Back to Shelter', "/shelters/#{@shelter.id}" %>
 </div>
+<br>
+<div>Number of Pets Available for Adoption: <%= @pets.count { |pet| pet } %></div>
 
 <div id="pets_2">
   <% @pets.each do |pet| %>
