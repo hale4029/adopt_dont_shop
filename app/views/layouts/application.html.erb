@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
-    <header>
+    <div class="header">
       <h1><%= link_to "Adopt Don't Shop", "/", :class => "link" %></h1>
       <nav>
         <ul>
@@ -16,7 +16,10 @@
           <li><%= link_to "Pets", "/pets", :class => "link" %></li>
         </ul>
       </nav>
-    </header>
+    </div>
     <%= yield %>
+    <div class="footer">
+      <p>Adopt Don't Ship<p>
+    </div>
   </body>
 </html>
