@@ -1,17 +1,24 @@
+<div id="shelter_pet">
+<div>
+  <%= link_to 'Add New Pet', "/shelters/#{@shelter.id}/pets/new" %><br>
+  <%= link_to 'Back to Shelter', "/shelters/#{@shelter.id}" %>
+</div>
+<br>
+<div>Number of Pets Available for Adoption: <%= @pets.count { |pet| pet } %></div>
 
+<div id="pets_2">
+  <% @pets.each do |pet| %>
+    <div class="responsive_2">
+      <div class="gallery_2">
+        <p><%= pet.name %></p>
+        <p><img src= <%= pet.image %>></p>
+        <p>Sex: <%= pet.sex %></p>
+        <p>Age: <%= pet.approximate_age %></p>
+        <%= link_to 'Edit', "/pets/#{pet.id}/edit" %><br>
+        <%= link_to 'Delete', "/pets/#{pet.id}", method: :delete %><br>
+      </div>
+    </div>
+    <% end %>
+</div>
 
-<ul>
-<% @pets.each do |pet| %>
-    <li><%= pet.name %></li>
-      <ul>
-        <li><img src= <%= pet.image %>></li>
-        <li>Sex: <%= pet.sex %></li>
-        <li>Age: <%= pet.approximate_age %></li>
-      </ul>
-      <%= link_to 'Edit', "/pets/#{pet.id}/edit" %>
-      <%= link_to 'Delete', "/pets/#{pet.id}", method: :delete %><br>
-<% end %>
-</ul>
-
-<%= link_to 'Add New Pet', "/shelters/#{@shelter.id}/pets/new" %><br>
-<%= link_to 'Back to Shelter', "/shelters/#{@shelter.id}" %>
+</div>

@@ -1,17 +1,23 @@
 body {
   font-family: 'Raleway', sans-serif;
-  padding: 0;
-  margin: 0;
+  padding-top: 70px;
+  margin: 0px;
+  min-height: 100vh;
   text-decoration: none;
 }
 
-header {
-  background: #92E0E5;
-  color: white;
-  padding: 0px;
+.header {
   display: flex;
   text-align: center;
   justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #92E0E5;
+  color: white;
+  padding-bottom: 0px;
+  margin: 0px;
 }
 
 nav li {
@@ -32,16 +38,42 @@ nav li:hover {
   padding: 10px;
 }
 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
 #hero {
+  display: flex;
   background: url('https://assets.simpleviewinc.com/simpleview/image/fetch/q_75/https://assets.simpleviewinc.com/simpleview/image/upload/crm/denver/Skyline-from-City-Park-Credit-VISIT-DENVER_ff0ebf30-9974-d6f4-c30321bf4a19c06e.jpg') no-repeat;
-  background-size: auto;
-  text-align: center;
-  padding: 50px 0;
-  margin-bottom: 50px;
+  width: 70%;
+  height: 1000px;
+  margin-top: 20px;
+  justify-content: center;
 }
 
 #hero h2 {
-  font-size: 30px;
-  margin-bottom: 25px;
-  text-decoration: none;
+  padding-top: 120px;
+  margin: 0;
+  font-size: 50px;
+}
+
+.footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.show_shelters {
+  padding: 100px;
+  margin: 100px;
+}
+
+.shelters {
+   min-height: 100vh;
 }
