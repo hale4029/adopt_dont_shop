@@ -17,5 +17,6 @@ post '/shelters/:shelter_id/pets', to: 'pets#create'
 get '/shelters/:id/edit', to: 'shelters#edit'
 patch '/shelters/:id', to: 'shelters#update'
 delete '/shelters/:id', to: 'shelters#destroy'
+patch '/pets/:id/adopt', to: 'pets#adopt'
 
 end
