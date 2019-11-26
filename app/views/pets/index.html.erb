@@ -1,4 +1,12 @@
 
+<div class="header_show_pets">
+  <nav>
+    <li><%= link_to "Show All Pets", "/pets", :class => "link_pets" %></li>
+    <li><%= link_to "Only Show Adoptable Pets", "/pets?adoptable=true", :class => "link_pets" %></li>
+    <li><%= link_to "Only Show Adoption-Pending Pets", "/pets?adoptable=false", :class => "link_pets" %></li>
+  </nav>
+</div>
+
 <div id="pets">
   <% @pets.each do |pet| %>
     <div class="responsive">

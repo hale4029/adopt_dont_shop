@@ -61,3 +61,32 @@ div.gallery_2 img {
   padding-left: 20px;
   min-height: 100vh;
 }
+
+
+.header_show_pets {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background: #efefef;
+  color: white;
+  padding: 0px;
+  margin: 0px;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 17px 10px;
+}
+
+nav li:hover {
+  background: #3F8DA7;
+  color: white;
+  cursor: pointer;
+}
+
+.link_pets {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
