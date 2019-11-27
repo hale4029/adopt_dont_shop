@@ -4,6 +4,7 @@
   height: 400px;
   display: inline-grid;
   justify-content: space-between;
+  min-width: 350px;
 }
 
 div.gallery_2 {

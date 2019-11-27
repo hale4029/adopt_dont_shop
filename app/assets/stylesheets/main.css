@@ -8,7 +8,6 @@ body {
 
 .header {
   display: flex;
-  text-align: center;
   justify-content: space-between;
   border: solid 2px #92E0E5;
   position: fixed;

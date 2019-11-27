@@ -1,6 +1,22 @@
 class SheltersController < ApplicationController
   def index
-    @shelters = Shelter.all
+    shelters = Shelter.all
+    if params[:sorted] == "false"
+      shelters
+    elsif params[:sorted] == "true"
+      shelters = shelters.sort_by do |shelter|
+        shelter.pets.count
+      end.reverse
+    elsif params[:alpha] == "true"
+      shelters = shelters.sort_by do |shelter|
+        shelter.name
+      end
+    else
+      shelters
+    end
+    x = params[:sorted] == "true" ? "true" : "false"
+    y = params[:alpha] == "true" ? "true" : "false"
+    @helper = [shelters, x, y]
   end
 
   def show
