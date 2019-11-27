@@ -1,4 +1,14 @@
 
+
+<div class="header_show_pets">
+  <nav>
+    <li><%= link_to "Show All Pets", "/pets", :class => "link_pets" %></li>
+    <li><%= link_to "Only Show Adoptable Pets", "/pets?adoptable=true", :class => "link_pets" %></li>
+    <li><%= link_to "Only Show Adoption-Pending Pets", "/pets?adoptable=false", :class => "link_pets" %></li>
+  </nav>
+</div>
+
+<div id="container">
 <div id="pets">
   <% @pets.each do |pet| %>
     <div class="responsive">
@@ -16,19 +26,4 @@
     </div>
   <% end %>
 </div>
-
-
-<!-- <ul>
-<% @pets.each do |pet| %>
-    <li><a href="/pets/<%= pet.id %>"><%= pet.name %></a></li>
-      <ul>
-        <li><img src= <%= pet.image %>></li>
-        <li>Sex: <%= pet.sex %></li>
-        <li>Age: <%= pet.approximate_age %></li>
-        <li>Shelter ID: <%= pet.shelter_id %></li>
-      </ul>
-      <%= link_to "Pet's Shelter Page", "/shelters/#{pet.shelter_id}/" %><br>
-      <%= link_to 'Edit', "/pets/#{pet.id}/edit" %>
-      <%= link_to 'Delete', "/pets/#{pet.id}", method: :delete %><br>
-<% end %>
-</ul> -->
+</div>

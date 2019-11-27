@@ -2,12 +2,26 @@ class PetsController < ApplicationController
   def index
     pets = Pet.all
     @pets = pets.sort_by { |pet| pet.adoption_status }
+    if params[:adoptable] == "true"
+      @pets.select! { |pet| pet.adoption_status == "adoptable" }
+    elsif params[:adoptable] == "false"
+      @pets.select! { |pet| pet.adoption_status == "adoption-pending" }
+    else
+      @pets
+    end
   end
 
   def show
     @shelter = Shelter.find(params[:shelter_id])
     pets = @shelter.pets
     @pets = pets.sort_by { |pet| pet.adoption_status }
+    if params[:adoptable] == "true"
+      @pets.select! { |pet| pet.adoption_status == "adoptable" }
+    elsif params[:adoptable] == "false"
+      @pets.select! { |pet| pet.adoption_status == "adoption-pending" }
+    else
+      @pets
+    end
   end
 
   def show_pet
@@ -53,5 +67,18 @@ class PetsController < ApplicationController
     redirect_to '/pets'
   end
 
+  def change_adoption_status
+    pet = Pet.find(params[:id])
+    if pet.adoption_status == "adoptable"
+      status = "adoption-pending"
+    else
+      status = "adoptable"
+    end
+    pet.update({
+      adoption_status: status
+      })
+    pet.save
+    redirect_to "/pets/#{pet.id}"
+  end
 
 end
